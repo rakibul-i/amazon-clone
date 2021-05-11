@@ -8,6 +8,7 @@ import {
 import Home from './components/Home/Home/Home';
 import Header from './components/Home/Header/Header';
 import ProductDetails from './components/Home/ProductDetails/ProductDetails';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <Switch>
         <Route path="/checkout">
           <Header/>
-          <h1>This is checkout</h1>
+          <Checkout/>
         </Route>
         <Route path="/login">
           <h1>This is login</h1>
