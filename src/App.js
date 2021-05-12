@@ -24,7 +24,7 @@ function App() {
       <div className="App">
       <Switch>
         <PrivetRoute path="/orderProceed">
-          <Header/>
+          <Header/> 
           <h1>Order is on Proceed</h1>
         </PrivetRoute>
         <Route path="/checkout">
@@ -37,6 +37,10 @@ function App() {
         </Route>
         <Route path="/:id">
           <ProductDetails/>
+        </Route>
+        <Route path="/">
+         <Header/>
+         <Home/>
         </Route>
         <Route exact path="/">
          <Header/>
