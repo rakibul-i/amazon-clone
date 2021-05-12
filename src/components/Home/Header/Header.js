@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { useStateValue } from '../StateProvider/StateProvider';
+import { UserContext } from '../../../App';
 
 
 const Header = () => {
     const [{basket}] = useStateValue();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <nav className="header">
             <Link to="/">
@@ -22,7 +24,7 @@ const Header = () => {
             <div className="header__nav">
             <Link to="/login" className="header__link">
             <div className="header__option">
-            <span className="header__optionLineOne">Hello Rakib </span>
+            <span className="header__optionLineOne">Hello {loggedInUser.name} </span>
             <span className="header__optionLineTwo">Sign In</span>
             </div>
             </Link>
