@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -9,19 +9,30 @@ import Home from './components/Home/Home/Home';
 import Header from './components/Home/Header/Header';
 import ProductDetails from './components/Home/ProductDetails/ProductDetails';
 import Checkout from './components/Checkout/Checkout';
+import Login from './components/FirebaseSignInOut/Login/Login';
+import PrivetRoute from './components/FirebaseSignInOut/PrivetRoute/PrivetRoute';
 
+export const UserContext = createContext();
 
 function App() {
+  
+  const [loggedInUser, setLoggedInUser] = useState({});
+  console.log(loggedInUser)
   return (
-    <Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
       <div className="App">
       <Switch>
+        <PrivetRoute path="/orderProceed">
+          <h1>Order is on Proceed</h1>
+        </PrivetRoute>
         <Route path="/checkout">
           <Header/>
           <Checkout/>
         </Route>
         <Route path="/login">
-          <h1>This is login</h1>
+          <Header/>
+          <Login/>
         </Route>
         <Route path="/:id">
           <ProductDetails/>
@@ -33,6 +44,7 @@ function App() {
       </Switch>
       </div>
     </Router>
+    </UserContext.Provider>
   );
 }
 

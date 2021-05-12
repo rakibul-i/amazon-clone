@@ -1,0 +1,26 @@
+.checkout{
+    display: flex;
+    padding: 20px;
+    background-color:white;
+    height:max-content;
+}
+.checkout__title{
+    margin-right: 10px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.proccedToCheckOut {
+    background: #f0c14b;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 8px;
+    width: 171px;
+    margin-top: 10px;
+}
+.checkout__right {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+h1.subtotal {
+    border-bottom: 1px solid lightgray;
+}

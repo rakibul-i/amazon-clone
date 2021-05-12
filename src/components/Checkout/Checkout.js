@@ -1,13 +1,20 @@
 import React from 'react';
 import CheckoutProduct from '../checkoutProduct/CheckoutProduct';
 import { useStateValue } from '../Home/StateProvider/StateProvider';
+import './checkout.css'
+import CurrencyFormat from 'react-currency-format';
+import { getBasketTotal } from '../Home/StateProvider/Reducer';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
     const [{basket}] = useStateValue();
 
-
+    const totalPrice = basket?.reduce((amount,item) => item.price + amount, 0 );
+    
+    //react-currency-format using for calculation
     return (
-        <div className="checkout">
+        <div className="container checkout">
+            <div className="checkout__left">
            {
                basket?.length === 0 ? (
                    <div>
@@ -25,6 +32,17 @@ const Checkout = () => {
                 </div>
             )
            }
+           </div>
+           {basket.length > 0 && (
+               <div className="checkout__right">
+                   
+                   <h1 className="subtotal">Subtotal</h1>
+                    <p>items {basket.length} </p>
+                    <div> <small>Price: $</small><strong>{totalPrice.toPrecision(5)}</strong>  </div>
+                   <Link to="/orderProceed" className=" btn proccedToCheckOut">Proceed to Checkout</Link>
+               </div>
+           )}
+           
         </div>
     );
 };

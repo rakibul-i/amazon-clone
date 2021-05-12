@@ -1,0 +1,15 @@
+.loginPage{
+    min-height: 100vh;
+}
+.google_login {
+    padding: 12px 32px;
+    border: 1px solid lightgray;
+    /* margin: auto; */
+    border-radius: 30px;
+}
+
+svg.google_logo {
+    font-size: 22px;
+    /* margin-right: 10px; */
+    margin-bottom: 3px;
+}
