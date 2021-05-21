@@ -1,0 +1,15 @@
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    font-size: 14px;
+}
+.make__payment {
+    color: black;
+    border-radius: 2px;
+    /* font-weight: 600; */
+    font-size: 18px;
+    padding: 8px 17px;
+    border: 1px solid #d1a10f;
+    background: #ffc107;
+}

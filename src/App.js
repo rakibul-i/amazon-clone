@@ -11,6 +11,8 @@ import ProductDetails from './components/Home/ProductDetails/ProductDetails';
 import Checkout from './components/Checkout/Checkout';
 import Login from './components/FirebaseSignInOut/Login/Login';
 import PrivetRoute from './components/FirebaseSignInOut/PrivetRoute/PrivetRoute';
+import ProceedOrder from './components/proceedOrder/ProceedOrder';
+import Payment from './components/Payment/Payment';
 
 export const UserContext = createContext();
 
@@ -24,12 +26,15 @@ function App() {
       <div className="App">
       <Switch>
         <PrivetRoute path="/orderProceed">
-          <Header/> 
-          <h1>Order is on Proceed</h1>
+          <ProceedOrder/>
         </PrivetRoute>
         <Route path="/checkout">
           <Header/>
           <Checkout/>
+        </Route>
+        <Route path="/makePayment">
+          <Header/>
+          <Payment></Payment>
         </Route>
         <Route path="/login">
           <Header/>
